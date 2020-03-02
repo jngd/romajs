@@ -1,12 +1,38 @@
 const ROMAN_SYMBOLS = {};
 
-function convertStringFromArabicToRoman(value) {}
+function convertStringFromArabicToRoman(value) {
+  console.log('[Romajs] convertStringFromArabicToRoman value', value);
 
-function convertStringFromArabicToRoman(value) {}
+  if (!value) {
+    console.log('[Romajs] convertStringFromArabicToRoman: No value available');
+    throw new Error('value required');
+  }
+}
 
-function convertStringFromArabicToRoman(value) {}
+function convertStringFromRomanToArabic(value) {
+  console.log('[Romajs] convertStringFromRomanToArabic value', value);
 
-export default function(value) {
+  if (!value) {
+    console.log('[Romajs] convertStringFromRomanToArabic: No value available');
+    throw new Error('value required');
+  }
+}
+
+function convertNumberFromRomanToArabic(value) {
+  console.log('[Romajs] convertNumberFromRomanToArabic value', value);
+
+  if (!value) {
+    console.log('[Romajs] convertNumberFromRomanToArabic: No value available');
+    throw new Error('value required');
+  }
+
+  if (value < 1 || value > 3999) {
+    console.log('[Romajs] convertNumberFromRomanToArabic: No value available');
+    throw new Error('invalid range');
+  }
+}
+
+function RomanNumber(value) {
   console.log('[Romajs] value', value);
 
   if (!value) {
@@ -28,3 +54,5 @@ export default function(value) {
       throw new Error('invalid value');
   }
 }
+
+module.exports = RomanNumber;

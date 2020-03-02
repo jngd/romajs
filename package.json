@@ -1,0 +1,23 @@
+{
+  "name": "romajs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "roma.js",
+  "dependencies": {
+    "jest": "^25.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jngd/romajs.git"
+  },
+  "author": "jngd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jngd/romajs/issues"
+  },
+  "homepage": "https://github.com/jngd/romajs#readme"
+}
