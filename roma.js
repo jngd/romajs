@@ -9,6 +9,25 @@ function convertStringFromArabicToRoman(value) {
   }
 }
 
+function romanArrayToArabic(arr, index, sum) {
+  const current = arr[index];
+  const next = arr[index + 1] || null;
+
+  if (current === arr[index - 1] && current === arr[index - 2] && current === arr[index - 3]) {
+    throw new Error('invalid value');
+  }
+
+  next && ROMAN_SYMBOLS[current] < ROMAN_SYMBOLS[next]
+    ? (sum -= ROMAN_SYMBOLS[current])
+    : (sum += ROMAN_SYMBOLS[current]);
+
+  if (index === 0) {
+    return sum;
+  }
+
+  return romanArrayToArabic(arr, index - 1, sum);
+}
+
 function convertStringFromRomanToArabic(value) {
   console.log('[Romajs] convertStringFromRomanToArabic value', value);
 
@@ -16,6 +35,15 @@ function convertStringFromRomanToArabic(value) {
     console.log('[Romajs] convertStringFromRomanToArabic: No value available');
     throw new Error('value required');
   }
+
+  if (typeof value != 'string') {
+    console.log('[Romajs] convertStringFromRomanToArabic: Value must be an string');
+    return;
+  }
+
+  const romanArray = value.split('');
+
+  return romanArrayToArabic(romanArray, romanArray.length - 1, 0);
 }
 
 function convertNumberFromRomanToArabic(value) {
@@ -55,4 +83,4 @@ function RomanNumber(value) {
   }
 }
 
-module.exports = RomanNumber;
+module.exports = (value) => RomanNumber(value);

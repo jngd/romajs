@@ -1,15 +1,15 @@
 const RomanNumber = require('./roma');
 
 test('Case null', () => {
-  expect(new RomanNumber()).toBe();
+  expect(() => RomanNumber(null)).toThrow(Error);
 });
 
 test('Case 0', () => {
-  expect(new RomanNumber()).toBe();
+  expect(() => new RomanNumber(0)).toThrow(Error);
 });
 
 test('Case 1', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber(1)).toBe('I');
 });
 
 test('Case 3', () => {
@@ -25,19 +25,19 @@ test('Case 5', () => {
 });
 
 test('Case I', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber('I')).toBe(1);
 });
 
 test('Case III', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber('III')).toBe(3);
 });
 
 test('Case IIII', () => {
-  expect(new RomanNumber()).toBe();
+  expect(() => RomanNumber('IIII')).toThrow(Error);
 });
 
 test('Case IV', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber('IV')).toBe(4);
 });
 
 test('Case 1968', () => {
@@ -61,29 +61,29 @@ test('Case 10000', () => {
 });
 
 test('Case CDXXIX', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber('CDXXIX')).toBe(429);
 });
 
 test('Case CD1X', () => {
-  expect(new RomanNumber()).toBe();
+  expect(() => RomanNumber('CD1X')).toThrow(Error);
 });
 
 test('Case ‘error’', () => {
-  expect(new RomanNumber()).toBe();
+  expect(() => RomanNumber('error')).toThrow(Error);
 });
 
 test('Case MCDLXXXII', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber('MCDLXXXII')).toBe(1482);
 });
 
 test('Case MCMLXXX', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber('MCMLXXX')).toBe(1980);
 });
 
 test('Case MMMMCMXCIX', () => {
-  expect(new RomanNumber()).toBe();
+  expect(() => RomanNumber('MMMMCMXCIX')).toThrow(Error);
 });
 
 test('Case MMMMDMXCIX', () => {
-  expect(new RomanNumber()).toBe();
+  expect(() => RomanNumber('MMMMDMXCIX')).toThrow(Error);
 });
