@@ -55,7 +55,7 @@ function arabicNumberToRoman(value) {
   }
 
   if (value === 0) {
-    return '';
+    return result;
   }
 
   for (let i = 0; i < ARABIC_VALUES.length; i++) {
