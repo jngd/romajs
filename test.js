@@ -12,16 +12,19 @@ test('Case 1', () => {
   expect(RomanNumber(1)).toBe('I');
 });
 
+test('Case 1 string', () => {
+  expect(RomanNumber('1')).toBe('I');
+});
 test('Case 3', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber(3)).toBe('III');
 });
 
 test('Case 4', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber(4)).toBe('IV');
 });
 
 test('Case 5', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber(5)).toBe('V');
 });
 
 test('Case I', () => {
@@ -41,23 +44,23 @@ test('Case IV', () => {
 });
 
 test('Case 1968', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber(1968)).toBe('MCMLXVIII');
 });
 
 test('Case 1474', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber(1474)).toBe('MCDLXXIV');
 });
 
 test('Case 2999', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber(2999)).toBe('MMCMXCIX');
 });
 
 test('Case 3000', () => {
-  expect(new RomanNumber()).toBe();
+  expect(RomanNumber(3000)).toBe('MMM');
 });
 
 test('Case 10000', () => {
-  expect(new RomanNumber()).toBe();
+  expect(() => RomanNumber(10000)).toThrow(Error);
 });
 
 test('Case CDXXIX', () => {
